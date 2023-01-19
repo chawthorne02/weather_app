@@ -2,14 +2,15 @@ import '../styles/App.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
+import Form from 'react-bootstrap/Form';
 
 function App() {
-  const [apiData, setApiData] = useState({})
-  const [getState, setGetState] = useState('greenville')
-  const [state, setState] = useState('greenville')
+  const [apiData, setApiData] = useState({});
+  const [getState, setGetState] = useState('greenville');
+  const [state, setState] = useState('greenville');
 
-  const apiKey = process.env.WEATHER_APP_API_KEY
-  const apiUrl = 'const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}`;'
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}`;
  
   useEffect(() => {
     fetch(apiUrl)
@@ -30,15 +31,17 @@ function App() {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>Weather App</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
+    <div className='App'>
+    <header className='app-title'>
+      <h2>Weather App</h2>
+    </header>
+    <Form className='location-form'>
+      <Form.Group>
+        <Form.Label>Location</Form.Label>
+        <Form.Control type='location' placeholder='Enter a location...'/>
+      </Form.Group>
+    </Form>
+    </div>
   );
 }
 
