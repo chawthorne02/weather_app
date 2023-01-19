@@ -38,9 +38,15 @@ function App() {
     <Form className='location-form'>
       <Form.Group>
         <Form.Label>Location</Form.Label>
-        <Form.Control type='location' placeholder='Enter a location...'/>
+        <Form.Control 
+        type='location' 
+        placeholder='Enter a location...'
+        onChange={inputHandler}
+        value={getState}
+        />
       </Form.Group>
     </Form>
+    <Button className='search-btn' onClick={submitHandler}>Search</Button>
     </div>
   );
 }
