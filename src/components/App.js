@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import weatherDisplay from './WeatherDisplay/WeatherDisplay';
 
 function App() {
   const [apiData, setApiData] = useState({});
@@ -47,6 +48,8 @@ function App() {
       </Form.Group>
     </Form>
     <Button className='search-btn' onClick={submitHandler}>Search</Button>
+
+    <weatherDisplay apiData={apiData}/>
     </div>
   );
 }
