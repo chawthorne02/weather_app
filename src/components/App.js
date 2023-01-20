@@ -31,6 +31,10 @@ function App() {
     return (k - 273.15).toFixed(2);
   };
 
+  const celsiusToFarenheit = (c) => {
+      return (c * 9/5 + 32).toFixed(1)
+  };
+
   return (
     <div className='App'>
     <header className='app-title'>
@@ -49,7 +53,7 @@ function App() {
     </Form>
     <Button className='search-btn' onClick={submitHandler}>Search</Button>
 
-    <WeatherDisplay apiData={apiData}/>
+    <WeatherDisplay apiData={apiData} celsiusToFarenheit={celsiusToFarenheit} />
     </div>
   );
 }
