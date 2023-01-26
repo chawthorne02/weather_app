@@ -16,8 +16,11 @@ function WeatherDisplay({ apiData, celsiusToFarenheit }) {
              className='weather-icon'
              />
              <Card.Body>
-                <Card.Title className='weather-title'>{apiData.name}</Card.Title>
+                <Card.Title>
+                    <h2 className='weather-title'>{apiData.name}</h2>
+                    </Card.Title>
                 <Card.Text>
+                    <h3 className='temperature'>Temperature: {apiData.main.temp} &deg;F</h3>
                     <section className='weather-info-display'>
                     <div className='left-info'>
                     <h5 className='temp-max'>

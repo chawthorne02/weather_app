@@ -18,3 +18,12 @@
 .left-info {
     width: 62%;
 }
+
+.temperature{
+    display: flex;
+    justify-content: center;
+}
+
+.weather-icon {
+    background-color: #000;
+}
