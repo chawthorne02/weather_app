@@ -11,7 +11,7 @@ function App() {
   const [state, setState] = useState('greenville');
 
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}&units=imperial`;
  
   useEffect(() => {
     fetch(apiUrl)

@@ -19,7 +19,16 @@ function WeatherDisplay({ apiData, celsiusToFarenheit }) {
                 <Card.Title className='weather-title'>{apiData.name}</Card.Title>
                 <Card.Text>
                     <h5 className='temp-max'>
-                        Max Temp: {apiData.main.temp_max}
+                        Max Temp: {apiData.main.temp_max} &deg;F
+                    </h5>
+                    <h5 className='temp-min'>
+                        Min Temp: {apiData.main.temp_min} &deg;F
+                    </h5>
+                    <h5 className='feels_like'>
+                        Feels like: {apiData.main.feels_like}
+                    </h5>
+                    <h5 className='wind-speed'>
+                        Wind Speed: {apiData.wind.speed} mph
                     </h5>
                 </Card.Text>
              </Card.Body>
