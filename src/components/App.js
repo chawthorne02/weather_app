@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import WeatherDisplay from './WeatherDisplay/WeatherDisplay';
+import FiveDayForecast from './FiveDayForecast/FiveDayForecast';
 
 function App() {
   const [apiData, setApiData] = useState({});
@@ -54,6 +55,7 @@ function App() {
     <Button className='search-btn' onClick={submitHandler}>Search</Button>
 
     <WeatherDisplay apiData={apiData} celsiusToFarenheit={celsiusToFarenheit} />
+    <FiveDayForecast state={state} apiKey={apiKey}/>
     </div>
   );
 }
