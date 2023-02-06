@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-
+import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
 
 function FiveDayForecast({ state, apiKey }) {
     const [forecastData, setforecastData] = useState({})
@@ -13,7 +14,18 @@ function FiveDayForecast({ state, apiKey }) {
       }, [forecastURL])
 
     return (
-        <div>hey</div>
+        <section className='forecast-display'>
+            {forecastData.list.main ? (
+            <Card className='forecast-card'>
+                <Card.Body>
+                    <Card.Title>{forecastData.list.dt_txt}</Card.Title>
+                </Card.Body>
+            </Card>
+            ) : (
+             <Spinner animation="grow" variant="primary" />
+            )}
+        </section>
+           
     )
 }
 
