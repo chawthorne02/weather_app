@@ -25,7 +25,8 @@
 }
 
 .weather-icon {
-    background-color: #000;
+    background-color: rgb(14, 174, 233);
+    height: 412px;
 }
 
 .description {
