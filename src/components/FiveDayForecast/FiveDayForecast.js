@@ -14,18 +14,16 @@ function FiveDayForecast({ state, apiKey }) {
       }, [forecastURL])
 
     return (
-        <section className='forecast-display'>
-            {forecastData.list.main ? (
-            <Card className='forecast-card'>
-                <Card.Body>
-                    <Card.Title>{forecastData.list.dt_txt}</Card.Title>
-                </Card.Body>
+        <>
+        {forecastData.list ? (
+            <Card>
+                <Card.Title>{forecastData.list[1].main.temp}</Card.Title>
             </Card>
-            ) : (
-             <Spinner animation="grow" variant="primary" />
-            )}
-        </section>
-           
+            ) :
+            (<h1>Loading</h1>
+            )
+        }
+        </>
     )
 }
 
