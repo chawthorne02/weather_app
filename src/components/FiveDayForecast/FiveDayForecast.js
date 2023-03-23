@@ -17,10 +17,19 @@ function FiveDayForecast({ state, apiKey }) {
         <>
         {forecastData.list ? (
             <Card>
-                <Card.Title>{forecastData.list[1].main.temp}</Card.Title>
+                <Card.Img 
+                variant='top'
+                src={`http://openweathermap.org/img/w/${forecastData.list[1].weather[0].icon}.png`}
+                alt="weather-status-icon"
+                className=''
+                />
+                <Card.Title>
+                    <h2>{forecastData.list[1].dt_txt}</h2>
+                </Card.Title>
             </Card>
             ) :
-            (<h1>Loading</h1>
+            (
+            <h1>Loading</h1>
             )
         }
         </>
