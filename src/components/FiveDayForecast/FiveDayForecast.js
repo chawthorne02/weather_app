@@ -25,6 +25,7 @@ function FiveDayForecast({ state, apiKey }) {
                 />
                 <Card.Title>
                     <h2>{forecastData.list[1].dt_txt}</h2>
+                    <h3>{forecastData.list[1].main.temp_max}</h3>
                 </Card.Title>
             </Card>
             ) :
